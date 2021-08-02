@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
+  const [ count, setCount] = useState(0)
+
+  const increment = () => setCount(count +1)
+  const decrement = () => setCount(count -1)
+
+  const reset = () => setCount(0)
+
   return (
-    <div>T</div>
+    <>
+      <div>count: {count}</div>
+      <button onClick={increment}>+1</button>
+      <button onClick={decrement}>-1</button>
+      <div>
+        <button onClick={reset}>Reset</button>
+      </div>
+    </>
   )
 }
 
